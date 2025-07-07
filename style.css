@@ -1,0 +1,187 @@
+/* 1. Variablen & Basis */
+:root {
+  --clr-bg: #000;
+  --clr-text: #fff;
+  --clr-accent: #00d4cc;
+  --font-primary: 'Orbitron', sans-serif;
+  --transition: 0.4s ease;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0; padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--clr-bg);
+  color: var(--clr-text);
+  font-family: var(--font-primary);
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+/* 2. Custom Cursor */
+.cursor {
+  position: fixed; top: 0; left: 0;
+  width: 20px; height: 20px;
+  border: 2px solid var(--clr-accent);
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  transition: transform 0.1s ease;
+  mix-blend-mode: difference;
+  z-index: 9999;
+}
+
+/* 3. Navigation */
+.nav {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 1rem 2rem;
+  position: fixed; top: 0; width: 100%;
+  background: rgba(0,0,0,0.85); z-index: 1000;
+}
+
+.nav__logo img { width: 100px; }
+
+.nav__links {
+  list-style: none; display: flex; gap: 2rem;
+}
+
+.nav__links a {
+  color: var(--clr-text); text-decoration: none;
+  position: relative; transition: color var(--transition);
+}
+
+.nav__links a::after {
+  content: ''; position: absolute; bottom: -4px; left: 0;
+  width: 0; height: 2px; background: var(--clr-accent);
+  transition: width var(--transition);
+}
+
+.nav__links a:hover,
+.nav__links a:focus {
+  color: var(--clr-accent);
+}
+
+.nav__links a:hover::after,
+.nav__links a:focus::after {
+  width: 100%;
+}
+
+/* 4. Hero mit WebGL */
+.hero {
+  position: relative; width: 100%; height: 100vh; overflow: hidden;
+  display: flex; align-items: center; justify-content: center;
+}
+
+#hero-canvas { position: absolute; top:0; left:0; width:100%; height:100%; }
+
+.hero__content {
+  position: relative; text-align: center; z-index: 2;
+}
+
+.hero__content h1 {
+  font-size: 4rem; color: var(--clr-accent);
+}
+
+.hero__content p { opacity: 0.8; }
+
+/* 5. Sections */
+.section {
+  padding: 6rem 2rem; max-width: 1200px; margin: 0 auto;
+}
+
+.section h2 {
+  font-size: 2.5rem; color: var(--clr-accent);
+  margin-bottom: 1rem;
+}
+
+/* 6. Projekte Grid */
+.projects__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px,1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.project-card {
+  background: #111; border: 1px solid #222;
+  overflow: hidden; cursor: pointer;
+  transition: transform var(--transition), border-color var(--transition);
+}
+
+.project-card:hover,
+.project-card:focus {
+  transform: translateY(-5px);
+  border-color: var(--clr-accent);
+}
+
+.project-card img {
+  display: block; width: 100%; height: auto;
+}
+
+.project-card figure {
+  margin: 0; position: relative;
+}
+
+.project-card figcaption {
+  position: absolute; bottom: 0; left: 0;
+  padding: 0.5rem 1rem; background: rgba(0,0,0,0.7);
+  font-weight: 500;
+}
+
+.project-card p {
+  padding: 1rem; opacity: 0.8;
+}
+
+/* 7. Kontaktformular */
+.contact__form {
+  display: grid; gap: 1rem; max-width: 600px; margin: 0 auto;
+}
+
+.contact__form label {
+  display: flex; flex-direction: column; font-size: 0.9rem;
+}
+
+.contact__form input,
+.contact__form textarea {
+  margin-top: 0.25rem; padding: 0.75rem;
+  background: #111; border: 1px solid #333;
+  color: var(--clr-text); font-family: inherit;
+}
+
+.contact__form .error {
+  color: #f44336; font-size: 0.8rem;
+  display: none; margin-top: 0.25rem;
+}
+
+.contact__form button {
+  padding: 0.75rem; background: var(--clr-accent);
+  border: none; color: var(--clr-bg); cursor: pointer;
+  transition: opacity var(--transition);
+}
+
+.contact__form button:hover {
+  opacity: 0.8;
+}
+
+/* 8. Footer */
+.footer {
+  text-align: center; padding: 2rem; background: #111;
+  font-size: 0.8rem; opacity: 0.7;
+}
+
+/* 9. Reveal-Animation */
+.pre-anim {
+  opacity: 0; transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.in-view {
+  opacity: 1; transform: translateY(0);
+}
+
+/* 10. Font-Import */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@300;500;700&display=swap');
