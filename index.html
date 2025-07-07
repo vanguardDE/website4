@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Vision Vanguards | STEM Racing Team</title>
+
+  <!-- SEO & Social -->
+  <meta name="description" content="Vision Vanguards STEM Racing Team der Alexander-von-Humboldt-Schule." />
+  <meta property="og:title" content="Vision Vanguards STEM Racing Team" />
+  <meta property="og:description" content="Innovation im Motorsport durch STEM-Kompetenzen verbinden." />
+  <meta property="og:image" content="assets/logo.svg" />
+  <meta property="og:url" content="https://yourusername.github.io/your-repo/" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Vision Vanguards STEM Racing Team",
+    "url": "https://yourusername.github.io/your-repo/",
+    "logo": "https://yourusername.github.io/your-repo/assets/logo.svg"
+  }
+  </script>
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- Custom Cursor -->
+  <div class="cursor"></div>
+
+  <!-- Navigation -->
+  <nav class="nav" role="navigation" aria-label="Hauptnavigation">
+    <a href="#home" class="nav__logo">
+      <img src="assets/logo.svg" alt="Vision Vanguards Logo" />
+    </a>
+    <ul class="nav__links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#team">Team</a></li>
+      <li><a href="#projects">Projekte</a></li>
+      <li><a href="#contact">Kontakt</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero mit WebGL-Background -->
+  <section id="home" class="hero" aria-labelledby="hero-title">
+    <canvas id="hero-canvas"></canvas>
+    <div class="hero__content">
+      <h1 id="hero-title">Vision Vanguards</h1>
+      <p>STEM Racing Team | Alexander-von-Humboldt-Schule</p>
+    </div>
+  </section>
+
+  <!-- Team -->
+  <main>
+    <section id="team" class="section team" aria-labelledby="team-title">
+      <h2 id="team-title">Unser Team</h2>
+      <p>Wir sind Schülerinnen und Schüler, die Motorsport und Wissenschaft verbinden.</p>
+    </section>
+
+    <!-- Projekte -->
+    <section id="projects" class="section projects" aria-labelledby="projects-title">
+      <h2 id="projects-title">Unsere Projekte</h2>
+      <div class="projects__grid">
+        <article class="project-card" tabindex="0">
+          <figure>
+            <img src="https://via.placeholder.com/400x300" alt="Projekt A Bild" loading="lazy" />
+            <figcaption>Projekt A</figcaption>
+          </figure>
+          <p>Beschreibung von Projekt A.</p>
+        </article>
+        <article class="project-card" tabindex="0">
+          <figure>
+            <img src="https://via.placeholder.com/400x300" alt="Projekt B Bild" loading="lazy" />
+            <figcaption>Projekt B</figcaption>
+          </figure>
+          <p>Beschreibung von Projekt B.</p>
+        </article>
+        <!-- weitere Projekte… -->
+      </div>
+    </section>
+
+    <!-- Kontakt -->
+    <section id="contact" class="section contact" aria-labelledby="contact-title">
+      <h2 id="contact-title">Kontakt</h2>
+      <form class="contact__form" novalidate>
+        <label>
+          Name
+          <input type="text" name="name" required />
+          <span class="error">Bitte Namen eingeben</span>
+        </label>
+        <label>
+          E-Mail
+          <input type="email" name="email" required />
+          <span class="error">Ungültige E-Mail</span>
+        </label>
+        <label>
+          Nachricht
+          <textarea name="message" rows="4" required></textarea>
+          <span class="error">Bitte Nachricht eingeben</span>
+        </label>
+        <button type="submit">Senden</button>
+      </form>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer" role="contentinfo">
+    <p>© 2025 Vision Vanguards STEM Racing Team</p>
+  </footer>
+
+  <!-- Libraries -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r152/three.min.js"></script>
+
+  <!-- Dein Script -->
+  <script src="js/script.js"></script>
+</body>
+</html>
